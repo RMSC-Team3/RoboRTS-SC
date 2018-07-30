@@ -68,6 +68,13 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install ros-kinetic-ros-base ros-kinetic-opencv3 ros-kinetic-cv-bridge ros-kinetic-image-transport ros-kinetic-stage-ros ros-kinetic-map-server ros-kinetic-laser-geometry ros-kinetic-interactive-markers ros-kinetic-tf ros-kinetic-pcl-* ros-kinetic-libg2o protobuf-compiler libprotobuf-dev libsuitesparse-dev libgoogle-glog-dev ros-kinetic-rviz
   
+  - sudo chown $USER:$USER /opt/
+  - sudo mkdir /opt/gcc-4.8.5-aarch64
+  - cd /opt/gcc-4.8.5-aarch64
+  - wget https://developer.nvidia.com/embedded/dlc/l4t-gcc-toolchain-64-bit-28-1
+  - tar -xvf gcc-4.8.5-aarch64.tgz
+  - export CROSS_COMPILE=/opt/gcc-4.8.5-aarch64/install/bin/aarch64-unknown-linux-gnu-
+  - export ARCH=arm64
   # Prepare rosdep to install dependencies.
   - sudo rosdep init
   - rosdep update
