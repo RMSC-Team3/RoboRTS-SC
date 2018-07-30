@@ -1,5 +1,6 @@
 # RoboRTS-ros
 --------
+[![Build Status](https://travis-ci.org/RMSC-Team3/RoboRTS-SC.svg?branch=master)](https://travis-ci.org/RMSC-Team3/RoboRTS-SC)
 ## Description
 
  - RoboRTS : Main package wrapper from RoboRTS original version.
