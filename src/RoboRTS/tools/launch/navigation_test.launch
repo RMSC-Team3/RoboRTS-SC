@@ -1,0 +1,41 @@
+<launch>
+  <arg name="map" value="icra"/>
+  <master auto="start"/>
+
+  <!-- Run the map server -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find roborts)/tools/maps/$(arg map).yaml" respawn="false" />
+  
+  <node name="rplidarNode" pkg="rplidar_ros" type="rplidarNode" output="screen">
+      <param name="serial_port" type="string" value="/dev/rplidar"/>
+      <param name="serial_baudrate" type="int" value="115200"/>
+      <param name="frame_id" type="string" value="base_laser_link"/>
+      <param name="inverted" type="bool" value="true"/>
+      <param name="angle_compensate" type="bool" value="true"/>
+  </node>
+ 
+
+  <!-- Run the TF Node -->
+  <node pkg="roborts" type="tf_tree" name="tf_tree_node" respawn="false" />
+  <!-- Run the rviz -->
+  <!--node name="rviz" pkg="rviz" type="rviz" args="-d $(find roborts)/tools/rviz/rm.rviz" /-->
+<!--node name="uwb_tf_static_publisher" pkg="tf"
+type="static_transform_publisher" args="0 0 0 0 0 0 1 map uwb 100" /-->
+  <!-- Run the Serial Node -->
+  <node pkg="roborts" type="serial_com_node" name="serial_com_node" respawn="false" />
+
+  <node pkg="roborts" type="localization_node" name="localization_node" respawn="false" />
+
+  <!-- Run the Global Planner Node -->
+  <node pkg="roborts" type="global_planner_node" name="global_planner_node" respawn="false" />
+
+  <!-- Run the Local Planner Node -->
+  <node pkg="roborts" type="local_planner_node" name="local_planner_node" respawn="false" />
+
+  <!-- Run the Send_Center_Pos Node -->
+  <node pkg="roborts" type="send_center_pos_node" name="send_center_pos_node" respawn="false" />
+
+  <!-- Run the Decision Node -->
+  <node pkg="roborts" type="test_decision_node" name="test_decision_node" respawn="false" />
+
+
+</launch>

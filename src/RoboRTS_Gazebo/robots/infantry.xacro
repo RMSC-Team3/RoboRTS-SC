@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="roborts_robot_xacro">
+
+        <xacro:include filename="$(find roborts_gazebo)/robots/infantry.urdf.xacro" />
+        <xacro:include filename="$(find roborts_gazebo)/robots/infantry.gazebo.xacro" />
+        <!--<xacro:include filename="$(find roborts_gazebo)/robots/infantry.transmission.xacro" />-->
+
+</robot>

@@ -1,0 +1,5 @@
+init_camera_id: 0
+enable_debug: true
+datacfg: "/home/dji/roborts-ws/src/RoboRTS/modules/perception/detection/yolo/config/yolov3-rm.data"
+cfg: "/home/dji/roborts-ws/src/RoboRTS/modules/perception/detection/yolo/config/yolov3-rm.cfg"
+weights: "/home/dji/roborts-ws/src/RoboRTS/modules/perception/detection/yolo/config/yolov3-rm.weights"

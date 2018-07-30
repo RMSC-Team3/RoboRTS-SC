@@ -1,0 +1,30 @@
+name: "rrts"
+transformation {
+  sensor: "base_laser_link"
+  base: "base_link"
+  rotation{
+    pitch: 0.0
+    yaw  : 0.0 
+    roll : 0.0
+  }
+  translation{
+    x: 0.0
+    y: 0.0
+    z: 0.05
+  }
+}
+
+transformation {
+  sensor: "camera1"
+  base: "base_link"
+  rotation{
+    pitch: 0.0
+    yaw  : 0.0
+    roll : 0.0
+  }
+  translation{
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+}
