@@ -63,7 +63,6 @@ env:
 
 # Install system dependencies, namely a very barebones ROS setup.
 before_install:
-  - pwd
   - sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
   - sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
   - sudo apt-get update
@@ -86,6 +85,7 @@ before_install:
 install:
   # Create the devel/setup.bash (run catkin_make with an empty workspace) and
   # source it to set the path variables.
+  - cd ～/
   - git clone https://github.com/RMSC-Team3/RoboRTS-SC
   - cd ～/RoboRTS-SC
   - catkin_make messages_generate_messages
