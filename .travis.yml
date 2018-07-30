@@ -72,7 +72,7 @@ before_install:
   - sudo mkdir /opt/gcc-4.8.5-aarch64
   - sudo chown $USER:$USER /opt/gcc-4.8.5-aarch64
   - cd /opt/gcc-4.8.5-aarch64
-  - sudo wget https://developer.nvidia.com/embedded/dlc/l4t-gcc-toolchain-64-bit-28-1 -o  gcc-4.8.5-aarch64.tgz
+  - sudo wget https://developer.nvidia.com/embedded/dlc/l4t-gcc-toolchain-64-bit-28-1 -O gcc-4.8.5-aarch64.tgz
   - sudo tar -xvf gcc-4.8.5-aarch64.tgz
   - export CROSS_COMPILE=/opt/gcc-4.8.5-aarch64/install/bin/aarch64-unknown-linux-gnu-
   - export ARCH=arm64
