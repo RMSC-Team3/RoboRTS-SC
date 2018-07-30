@@ -42,6 +42,8 @@ dist: xenial
 sudo: required
 language:
   - generic
+cache:
+  - apt
 
 # Configuration variables. All variables are global now, but this can be used to
 # trigger a build matrix for different ROS distributions if desired.
@@ -63,8 +65,8 @@ env:
 before_install:
   - sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
   - sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
-  - sudo apt-get update
-  - sudo apt-get -y install ros-kinetic-ros-base python-rosinstall python-rosinstall-generator python-wstool build-essential
+  - sudo apt-get update -qq
+  - sudo apt-get install ros-kinetic-desktop-full python-rosinstall python-rosinstall-generator python-wstool build-essential
   
   # Prepare rosdep to install dependencies.
   - sudo rosdep init
