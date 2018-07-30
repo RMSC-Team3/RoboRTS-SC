@@ -85,9 +85,9 @@ before_install:
 install:
   # Create the devel/setup.bash (run catkin_make with an empty workspace) and
   # source it to set the path variables.
-  - cd ～/
+  - cd
   - git clone https://github.com/RMSC-Team3/RoboRTS-SC
-  - cd ～/RoboRTS-SC
+  - cd RoboRTS-SC
   - catkin_make messages_generate_messages
   - catkin_make
   - source devel/setup.bash
