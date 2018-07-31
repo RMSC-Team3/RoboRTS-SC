@@ -83,7 +83,7 @@ before_install:
 install:
   # Create the devel/setup.bash (run catkin_make with an empty workspace) and
   # source it to set the path variables.
-  - mv -r /home/travis/build/RMSC-Team3/RoboRTS-SC /home/travis/build/RMSC-Team3/src
+  - mv /home/travis/build/RMSC-Team3/RoboRTS-SC /home/travis/build/RMSC-Team3/src
   - cd /home/travis/build/RMSC-Team3
   - catkin_make messages_generate_messages
   - catkin_make
