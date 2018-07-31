@@ -193,7 +193,7 @@ void demo(bool enable, int camera_id, int **x_offset, int *object_num)
     printf("Finish Detection %f\n", what_time_is_it_now());
     fps = 1. / (what_time_is_it_now() - demo_time);
     if(enable)
-      //display_in_thread();
+    display_in_thread();
     cvRelease(&ipl);
   } else {
       char message[] = "Waiting for camera driver...";
