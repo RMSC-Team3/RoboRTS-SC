@@ -83,12 +83,7 @@ before_install:
 install:
   # Create the devel/setup.bash (run catkin_make with an empty workspace) and
   # source it to set the path variables.
-  - mkdir -p $HOME/roborts_ws/src
-# Clone this repository
-  - cd $HOME/roborts_ws/src
-  - git clone https://github.com/RoboMaster/RoboRTS.git
-# Build RoboRTS
-  - cd $HOME/roborts_ws
+  - cd $HOME/RoboRTS-SC
   - catkin_make messages_generate_messages
   - catkin_make
 
